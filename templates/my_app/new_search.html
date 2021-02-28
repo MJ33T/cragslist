@@ -3,44 +3,20 @@
 {% block content %}
     <h2 style="text-align: center">{{ search | title }}</h2>
     <div class="row">
+    {% for post in final_postings %}
         <div class="col s4">
             <div class="card">
                 <div class="card-image">
-                   <a href="/"><img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHVwcHl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt=""></a>
+                   <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
                 </div>
                 <div class="card-content">
-                    <p>TEST</p>
+                    <p>{{ post.0 }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="/">Test Price</a>
+                    <a href="{{ post.1 }}">{{ post.2 }}</a>
                 </div>
             </div>
         </div>
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                   <a href="/"><img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHVwcHl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">Test Price</a>
-                </div>
-            </div>
-        </div><div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                   <a href="/"><img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHVwcHl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">Test Price</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
-
 {% endblock content %}
